@@ -24,3 +24,44 @@ diccionario={
 producto=multiplicar_valores_diccionario(diccionario)
     
 print(f"El producto de todos los valores numéricos del diccionario es: {producto}")
+
+2 Escribe un programa en Python para eliminar una clave de un diccionario.
+diccionario={
+    "a":2,
+    "b":3,
+    "c":4
+}
+a="b"
+print(diccionario)
+def eliminar_clave(diccionario, clave):
+# Verificar si la clave existe en el diccionario
+    if clave in diccionario:
+        # Eliminar la clave utilizando la instrucción `del`
+        del diccionario[clave]
+        print(f"La clave '{clave}' ha sido eliminada del diccionario.")
+    else:
+        print(f"La clave '{clave}' no existe en el diccionario.")
+
+    return diccionario
+
+eliminar_clave(diccionario,a)    
+print(diccionario)
+
+3 Escribe un programa en Python para convertir dos listas en un diccionario.
+def convertir_listas_a_diccionario(claves, valores):
+    #verificar si las listas tienen la misma longitud
+    if len(claves) != len(valores):
+        raise ValueError("Las listas de claves y valores deben tener la misma longitud.")
+    
+    #usar zip para emparejar las listas y convertirlas en un diccionario
+    diccionario = dict(zip(claves, valores))
+    
+    return diccionario
+    
+A=["a","b","c"]
+B=[2,3,4]
+
+diccionario=convertir_listas_a_diccionario(A,B)
+
+print(diccionario)
+
