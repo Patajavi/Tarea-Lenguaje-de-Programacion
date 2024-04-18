@@ -25,7 +25,7 @@ producto=multiplicar_valores_diccionario(diccionario)
     
 print(f"El producto de todos los valores numéricos del diccionario es: {producto}")
 
-2 Escribe un programa en Python para eliminar una clave de un diccionario.
+#2 Escribe un programa en Python para eliminar una clave de un diccionario.
 diccionario={
     "a":2,
     "b":3,
@@ -47,7 +47,7 @@ def eliminar_clave(diccionario, clave):
 eliminar_clave(diccionario,a)    
 print(diccionario)
 
-3 Escribe un programa en Python para convertir dos listas en un diccionario.
+#3 Escribe un programa en Python para convertir dos listas en un diccionario.
 def convertir_listas_a_diccionario(claves, valores):
     #verificar si las listas tienen la misma longitud
     if len(claves) != len(valores):
@@ -65,3 +65,22 @@ diccionario=convertir_listas_a_diccionario(A,B)
 
 print(diccionario)
 
+#4 Escribe un programa en Python para ordenar un diccionario dado por clave.
+def ordenar_diccionario_por_clave(diccionario):
+    #ordenar las claves del diccionario
+    claves_ordenadas = sorted(diccionario)
+    
+    #crear un nuevo diccionario ordenado utilizando las claves ordenadas
+    diccionario_ordenado={clave: diccionario[clave] for clave in claves_ordenadas}
+    
+    return diccionario_ordenado
+    
+diccionario={
+    "z": 1,
+    "c":2,
+    "a":3
+}
+A=ordenar_diccionario_por_clave(diccionario)
+print(A)
+
+#5 Escribe un programa en Python para obtener los valores máximo y mínimo de un diccionario.
