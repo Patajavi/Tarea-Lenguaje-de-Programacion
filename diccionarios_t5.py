@@ -100,4 +100,87 @@ diccionario={
     "c":3
 }
 obtener_maximo_minimo(diccionario)
+
 #6 Escribe un programa en Python para obtener un diccionario a partir de los campos de un objeto.
+class Persona:
+    def __init__(self, nombre, edad, ocupacion):
+        self.nombre = nombre
+        self.edad = edad
+        self.ocupacion = ocupacion
+
+def crear_diccionario():
+    #solicitar claves para una persona
+    nombre = input("Introduce el nombre: ")
+    edad=0
+    while edad<=0:
+        print("introduce una edad valida")
+        try:
+            edad=int(input("Introduce la edad: "))
+        except ValueError:
+            print("introduce una edad valida")
+    ocupacion = input("Introduce la ocupación: ")
+    
+    #crear una instancia de Persona con los valores introducidos
+    persona=Persona(nombre, edad, ocupacion)
+    
+    #convertir los campos del objeto a un diccionario utilizando vars()
+    diccionario_persona=vars(persona)
+    return diccionario_persona
+    
+    
+persona=crear_diccionario()
+
+print("El diccionario resultante a partir de los campos de Persona es:", persona)
+
+#7 Escribe un programa en Python para eliminar duplicados del diccionario.
+def eliminar_duplicados(diccionario):
+#eliminar valores duplicados manteniendo la primera clave que tenga el valor repetido
+    # Diccionario para almacenar los pares clave-valor sin duplicados
+    diccionario_sin_duplicados = {}
+    
+    # Conjunto para llevar un registro de los valores que ya han aparecido
+    valores_vistos = set()
+    
+    # Iterar sobre los pares clave-valor del diccionario
+    for clave, valor in diccionario.items():
+        # Si el valor no se ha visto antes, agregarlo al diccionario sin duplicados
+        if valor not in valores_vistos:
+            diccionario_sin_duplicados[clave] = valor
+            # Marcar el valor como visto
+            valores_vistos.add(valor)
+    
+    return diccionario_sin_duplicados
+
+diccionario={
+    "a":1,
+    "b":2,
+    "c":3,
+    "d":2
+}
+print(diccionario)
+    
+diccionario_sin_duplicados=eliminar_duplicados(diccionario)
+print(f"El diccionario sin duplicados es: {diccionario_sin_duplicados}")
+
+#8 Escribe un programa en Python para verificar si un diccionario está vacío o no.
+def verificar_diccionario_vacio(diccionario):
+    return len(diccionario) == 0
+diccionario1={"a":1}
+diccionario2={}
+
+# Verificar si el diccionario está vacío
+esta_vacio = verificar_diccionario_vacio(diccionario1)
+    
+    # Mostrar el resultado
+if esta_vacio:
+    print("El diccionario está vacío.")
+else:
+    print("El diccionario no está vacío.")
+        
+#repetir para el otro diccionario
+esta_vacio = verificar_diccionario_vacio(diccionario2)
+    
+if esta_vacio:
+    print("El diccionario está vacío.")
+else:
+    print("El diccionario no está vacío.")
