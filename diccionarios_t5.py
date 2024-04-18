@@ -84,3 +84,20 @@ A=ordenar_diccionario_por_clave(diccionario)
 print(A)
 
 #5 Escribe un programa en Python para obtener los valores máximo y mínimo de un diccionario.
+def obtener_maximo_minimo(diccionario):
+    #obtener los valores del diccionario
+    valores=diccionario.values()
+    
+    #encontrar el valor mínimo y máximo utilizando las funciones min() y max()
+    valor_minimo=min(valores)
+    valor_maximo=max(valores)
+    
+    return print(valor_minimo, valor_maximo)
+    
+diccionario={
+    "a":1,
+    "b":2,
+    "c":3
+}
+obtener_maximo_minimo(diccionario)
+#6 Escribe un programa en Python para obtener un diccionario a partir de los campos de un objeto.
