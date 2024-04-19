@@ -295,3 +295,10 @@ print("Diccionario original:")
 print(diccionario2)
 print("Diccionario filtrado:")
 print(diccionario_filtrado2)
+#En Python, una comprensión de diccionarios es una sintaxis especial que permite crear diccionarios de manera concisa y eficiente.
+#Similar a las comprensiones de listas, las comprensiones de diccionarios te permiten crear diccionarios al iterar sobre una secuencia (como una lista o un diccionario) y aplicar transformaciones o filtros a los datos.
+#{clave: valor for elemento in secuencia if condición}
+#Crear un diccionario donde las claves son números del 1 al 5 y los valores son los cuadrados de esos números
+#diccionario = {x: x ** 2 for x in range(1, 6)}
+#print(diccionario)
+
