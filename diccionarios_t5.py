@@ -274,3 +274,24 @@ print(f"la lista de listas obtenida es: {lista}")
 #16 Escribe un programa en Python para filtrar números pares de un diccionario de valores.
 #Diccionario original: {'V': [1, 4, 6, 10], 'VI': [1, 4, 12], 'VII': [1, 3, 8]} Filtra números pares de los valores del diccionario mencionado: {'V': [4, 6, 10], 'VI': [4, 12], 'VII': [8]}
 #Diccionario original: {'V': [1, 3, 5], 'VI': [1, 5], 'VII': [2, 7, 9]} Filtra números pares de los valores del diccionario mencionado: {'V': [], 'VI': [], 'VII': [2]}
+def filtrar_numeros_pares(diccionario):
+    #usar compresion de diccionarios para filtrar los valores
+    diccionario_filtrado = {
+        clave:[numero for numero in valores if numero % 2 == 0]
+        for clave, valores in diccionario.items()
+    }
+    return diccionario_filtrado
+diccionario1 = {'V':[1, 4, 6, 10], 'VI':[1, 4, 12], 'VII':[1, 3, 8]}
+diccionario2 = {'V':[1, 3, 5], 'VI':[1, 5], 'VII':[2, 7, 9]}
+
+diccionario_filtrado1=filtrar_numeros_pares(diccionario1)
+print("Diccionario original:")
+print(diccionario1)
+print("Diccionario filtrado:")
+print(diccionario_filtrado1)
+
+diccionario_filtrado2=filtrar_numeros_pares(diccionario2)
+print("Diccionario original:")
+print(diccionario2)
+print("Diccionario filtrado:")
+print(diccionario_filtrado2)
