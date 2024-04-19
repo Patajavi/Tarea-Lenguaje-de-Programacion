@@ -204,16 +204,72 @@ print(f"Lista de valores de la clave '{clave}': {valores}")
 valores = extraer_valores(lista_diccionarios, clave2)
 print(f"Lista de valores de la clave '{clave2}': {valores}")
 
-
-
 #12 Escribe un programa en Python para encontrar la longitud de un diccionario de valores.
+def calcular_longitud_diccionario(diccionario):
+    #usar len() para calcular la longitud del diccionario
+    longitud=len(diccionario)
+    return longitud
+diccionario={
+    "a":1,
+    "b":2,
+    "c":3,
+    "d":4
+}
+longitud=calcular_longitud_diccionario(diccionario)
+print(f"La longitud del diccionario es: {longitud}")
 
 #13 Escribe un programa en Python para obtener la profundidad de un diccionario.
+def calcular_profundidad_diccionario(diccionario):
+    profundidad_maxima = 1
+    for valor in diccionario.values():
+        #recursividad go brrr
+        if isinstance(valor, dict):
+            profundidad_dic_anidado = calcular_profundidad_diccionario(valor)
+            profundidad_maxima = max(profundidad_maxima, 1 + profundidad_dic_anidado)
+    return profundidad_maxima
+    
+diccionario={
+    "a":{"b":{"c":{"d"}}}
+}
+
+pmax=calcular_profundidad_diccionario(diccionario)
+print(f"la profundidad del diccionario es:{pmax}")
 
 #14 Escribe un programa en Python para acceder al elemento de la clave de un diccionario por índice. Salida esperada: física matemáticas química
-
+def acceder_elemento_por_indice(diccionario, indice):
+    # Obtener una lista de claves del diccionario
+    claves = list(diccionario.keys())
+    # Acceder a la clave en el índice especificado
+    clave = claves[indice]
+    # Obtener el valor de la clave en el índice especificado
+    valor = diccionario[clave]
+    # Retornar la clave y el valor
+    return clave, valor
+diccionario = {"física": 90, "matemáticas": 80, "química": 70}
+    
+# Imprimir todos los elementos del diccionario por índice
+print("Salida esperada:")
+for indice in range(len(diccionario)):
+    # Acceder al elemento de la clave por índice
+    clave, valor = acceder_elemento_por_indice(diccionario, indice)
+        
+    # Mostrar la clave
+    print(clave)
+#no es esto mas facil?
+for i in diccionario:
+    print(i)
 #15 Escribe un programa en Python para convertir un diccionario en una lista de listas.
 #Diccionario original: {1: 'rojo', 2: 'verde', 3: 'negro', 4: 'blanco', 5: 'negro'} Convierte el mencionado diccionario en una lista de listas: [[1, 'rojo'], [2, 'verde'], [3, 'negro'], [4, 'blanco'], [5, 'negro']]
+def convertir_diccionario_a_lista(diccionario):
+     #usar listas comprimidas para convertir el diccionario en una lista de listas
+    lista_de_listas = [[clave, valor] for clave, valor in diccionario.items()]
+    
+    return lista_de_listas
+    
+diccionario_original={1:'rojo', 2:'verde', 3:'negro', 4:'blanco', 5:'negro'}
+
+lista=convertir_diccionario_a_lista(diccionario_original)
+print(f"la lista de listas obtenida es: {lista}")
 
 #16 Escribe un programa en Python para filtrar números pares de un diccionario de valores.
 #Diccionario original: {'V': [1, 4, 6, 10], 'VI': [1, 4, 12], 'VII': [1, 3, 8]} Filtra números pares de los valores del diccionario mencionado: {'V': [4, 6, 10], 'VI': [4, 12], 'VII': [8]}
