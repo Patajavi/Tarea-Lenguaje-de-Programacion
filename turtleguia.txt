@@ -1,0 +1,27 @@
+Turtle(): Crea un nuevo objeto Turtle.
+
+forward(distance): Mueve la tortuga hacia adelante la cantidad especificada de unidades.
+
+backward(distance): Mueve la tortuga hacia atrás la cantidad especificada de unidades.
+
+left(angle): Gira la tortuga hacia la izquierda el ángulo especificado en grados.
+
+right(angle): Gira la tortuga hacia la derecha el ángulo especificado en grados.
+
+penup(): Levanta el lápiz de la tortuga, lo que significa que no dibujará al moverse.
+
+pendown(): Baja el lápiz de la tortuga, lo que significa que dibujará al moverse.
+
+goto(x, y): Mueve la tortuga a la posición especificada por las coordenadas (x, y) sin dibujar una línea.
+
+speed(speed): Establece la velocidad de la tortuga (0 es la más rápida, 1 es la más lenta).
+
+color(color): Establece el color del lápiz de la tortuga.
+
+width(width): Establece el ancho de la línea dibujada por la tortuga.
+
+circle(radius): Dibuja un círculo con el radio especificado.
+
+clear(): Borra la pantalla y mueve la tortuga a su posición inicial.
+
+reset(): Borra todo y restaura la tortuga a su estado inicial.
